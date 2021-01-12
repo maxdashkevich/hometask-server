@@ -23,7 +23,7 @@ const server = http.createServer((req, res) => {
                 break;
             
             case 'POST':
-                users.push({name: 'UserName'});
+                users.push({name: 'Kirill'});
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'text/plain');
                 res.end();
@@ -37,11 +37,13 @@ const server = http.createServer((req, res) => {
                 break;
 
             default:
-                res.statusCode = 200;
-                res.setHeader('Content-Type', 'text/plain');
-                res.end('Hello world!');
+                res.statusCode = 404;
+                res.end('Not found');
                 break; 
         }
+    } else {
+        res.statusCode = 404;
+        res.end('Not found');
     }
 });
 
